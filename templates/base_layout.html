@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Djanonautic</title>
+    <link rel ='stylesheet' href="{% static 'styles.css' %}" >
+
+</head>
+<body>
+<nav>
+    <ul>
+        {% if user.is_authenticated %}
+        <li><form class="logout-link" action= {% url 'accounts:logout' %} method='POST'>
+            {% csrf_token %}
+            <button type='submit'>Logout</button>
+        <li><a href="{% url 'articles:create' %}">Create article</a></li>
+
+        </form>
+        </li>
+        {% else %}
+        <li><a href="{% url 'accounts:login' %}">Login</a></li>
+        <li><a href="{% url 'accounts:signup' %}">Sign up</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<h1><a href={% url 'home' %}> <img src="{% static 'logo.png' %}"/></a></h1>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

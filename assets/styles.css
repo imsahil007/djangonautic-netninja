@@ -1,0 +1,26 @@
+body {
+    background: #0f121f;
+    /* background-image: url(/stars.png); */
+    background-repeat : no-repeat;
+}
+
+body *{
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    font-family: Ubuntu;
+}
+
+h1, h2, h3, h4, h5{
+    font-weight: normal;
+    color:white;
+    margin: 0;
+}
+p {
+    color: white;
+}
+a, a:hover, a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+li{
+    color: white;
+}
